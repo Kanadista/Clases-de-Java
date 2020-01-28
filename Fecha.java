@@ -5,7 +5,7 @@
  *  
  *    -Dia: int, consultable, modificable
  *    -Mes: int, consultable, modificable
- *    -Año: int, consultable, modificable
+ *    -AÃ±o: int, consultable, modificable
  * 
  *   Propiedades derivadas:
  *     
@@ -33,20 +33,26 @@
  * 
  * Los meses Enero, Marzo, Mayo, Julio, Agosto, Octubre y Diciembre tienen 31 dias.
  * Los meses Abril, Junio, Septiembre y Noviembre tienen 30 dias.
- * El mes de Febrero puede tener 28 o 29 días según si el año es bisiesto o no.
+ * El mes de Febrero puede tener 28 o 29 dÃ­as segÃºn si el aÃ±o es bisiesto o no.
  */
  
  public class Fecha implements Comparable<Fecha> {
+	
 	 private int dia;
+	
 	 private int mes;
+	
 	 private int anho;
 	 
 	 //constructor sin parametros
 	 
 	 public Fecha(){
 		 
+		
 		 dia = 1;
+		
 		 mes = 1;
+	
 		 anho = 2000;
 		
 	 }
@@ -56,128 +62,209 @@
 	 public Fecha(int dia, int mes, int anho){
 		
 		boolean bisiesto;
-		 if(anho < 1){
+		
+		if(anho < 1){
+		
 			 this.anho = 2000;
+		
 		 }else{
+		
 			 this.anho = anho;
+		
 		 }
 		
 		 if((anho%400 == 0)||(anho%4 == 0 && anho%100 != 0)){
-			bisiesto = true;
+			
+			 bisiesto = true;
+		
 		 }else{
-			bisiesto = false;  
+		
+			 bisiesto = false;  
+		
 		 }
 		 
 		 if(mes < 1 || mes > 12){
+		
 			 this.mes = 1;
+		
 		 }else{
+		
 			 this.mes = mes;
+		
 		 }
 		 
 		 switch(this.mes){
-			 case 1:
-			  if(dia < 1 || dia > 31){
+			
+		 	  case 1:
+			
+				 if(dia < 1 || dia > 31){
+			
 				  this.dia = 1;
+			
 			  }else{
+			
 				  this.dia = dia;
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 2:
-			  if(bisiesto){
-				 if(dia < 1 || dia > 29){
+			
+				 if(bisiesto){
+			
+				  if(dia < 1 || dia > 29){
+			
 					 this.dia = 1; 
+			
 				 }else{
+			
 					 this.dia = dia;
 				 }
+			 
 			  }else{
-				 if(dia < 1 || dia > 28){
+			
+				  if(dia < 1 || dia > 28){
+				
 					 this.dia = 1;
+				
 				 }else{
+				
 					 this.dia = dia;
 				 }
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 3:
-			  if(dia < 1 || dia > 31){
-				 this.dia = 1;
+			
+				 if(dia < 1 || dia > 31){
+			
+				  this.dia = 1;
+			
 			  }else{
-				 this.dia = dia;
+			
+				  this.dia = dia;
 			  }
-			 break;
+			 
+			  break;
 			 
 			 case 4:
-			  if(dia < 1 || dia > 30){
+			
+				 if(dia < 1 || dia > 30){
+			
 				  this.dia = 1;
+			 
 			  }else{
+			
 				  this.dia = dia;
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 5:
-			  if(dia < 1 || dia > 31){
+			
+				 if(dia < 1 || dia > 31){
+			
 				  this.dia = 1;
+			
 			  }else{
+			
 				  this.dia = dia;
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 6:
-			  if(dia < 1 || dia > 30){
+			
+				 if(dia < 1 || dia > 30){
+			
 				  this.dia = 1;
+			
 			  }else{
+			
 				  this.dia = dia;
+			
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 7:
-			  if(dia < 1 || dia > 31){
+			
+				 if(dia < 1 || dia > 31){
+			
 				  this.dia = 1;
+			
 			  }else{
+			
 				  this.dia = dia;
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 8:
-			  if(dia < 1 || dia > 31){
+			
+				 if(dia < 1 || dia > 31){
+			
 				  this.dia = 1;
+			 
 			  }else{
+			
 				  this.dia = dia;
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 9:
-			  if(dia < 1 || dia > 30){
+			
+				 if(dia < 1 || dia > 30){
+			
 				  this.dia = 1;
+			
 			  }else{
+			
 				  this.dia = dia;
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 10:
-			  if(dia < 1 || dia > 31){
+			
+				 if(dia < 1 || dia > 31){
+			
 				  this.dia = 1;
+			
 			  }else{
+			
 				  this.dia = dia;
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 11:
-			  if(dia < 1 || dia > 30){
+			
+				 if(dia < 1 || dia > 30){
+			
 				  this.dia = 1;
+			
 			  }else{
+			
 				  this.dia = dia;
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 12:
-			  if(dia < 1 || dia > 31){
+			
+				 if(dia < 1 || dia > 31){
+			
 				  this.dia = 1;
+			
 			  }else{
+		
 				  this.dia = dia;
 			  }
-			 break;
+		
+			  break;
 		 }
 		 
 		 
@@ -195,14 +282,20 @@
 		boolean bisiesto;
 		
 		if((anho%400 == 0)||(anho%4 == 0 && anho%100 != 0)){
+		
 			bisiesto = true;
-		 }else{
-			bisiesto = false;  
+		
+		}else{
+			
+			 bisiesto = false;  
 		 }
 		 
 		 if(mes < 1 || mes > 12){
+		
 			 this.mes = 1;
+		
 		 }else{
+		
 			 this.mes = mes;
 		 }
 		
@@ -210,113 +303,182 @@
 		
 		
 		switch(mes){
-			 case 1:
-			  if(dia < 1 || dia > 31){
+			
+		case 1:
+			 
+				 if(dia < 1 || dia > 31){
+			
 				  this.dia = 1;
+			 
 			  }else{
+			
 				  this.dia = dia;
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 2:
-			  if(bisiesto){
-				 if(dia < 1 || dia > 29){
+			 
+				 if(bisiesto){
+				
+				  if(dia < 1 || dia > 29){
+				
 					 this.dia = 1; 
+			
 				 }else{
+				
 					 this.dia = dia;
 				 }
+			
 			  }else{
-				 if(dia < 1 || dia > 28){
+			
+				  if(dia < 1 || dia > 28){
+			
 					 this.dia = 1;
+			
 				 }else{
+			
 					 this.dia = dia;
 				 }
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 3:
-			  if(dia < 1 || dia > 31){
-				 this.dia = 1;
+			
+				 if(dia < 1 || dia > 31){
+			
+				  this.dia = 1;
+			
 			  }else{
-				 this.dia = dia;
+			
+				  this.dia = dia;
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 4:
-			  if(dia < 1 || dia > 30){
+			
+				 if(dia < 1 || dia > 30){
+			
 				  this.dia = 1;
+			
 			  }else{
+		
 				  this.dia = dia;
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 5:
-			  if(dia < 1 || dia > 31){
+			
+				 if(dia < 1 || dia > 31){
+			
 				  this.dia = 1;
+			
 			  }else{
+			
 				  this.dia = dia;
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 6:
-			  if(dia < 1 || dia > 30){
+			 
+				 if(dia < 1 || dia > 30){
+			
 				  this.dia = 1;
+			 
 			  }else{
+			
 				  this.dia = dia;
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 7:
-			  if(dia < 1 || dia > 31){
+			 
+				 if(dia < 1 || dia > 31){
+			
 				  this.dia = 1;
+			  
 			  }else{
+			
 				  this.dia = dia;
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 8:
-			  if(dia < 1 || dia > 31){
-				  this.dia = 1;
+			
+				 if(dia < 1 || dia > 31){
+			
+					 this.dia = 1;
+			
 			  }else{
+			
 				  this.dia = dia;
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 9:
-			  if(dia < 1 || dia > 30){
+			
+				 if(dia < 1 || dia > 30){
+			
 				  this.dia = 1;
+			
 			  }else{
+			
 				  this.dia = dia;
 			  }
-			 break;
+		
+			  break;
 			 
 			 case 10:
-			  if(dia < 1 || dia > 31){
+			
+				 if(dia < 1 || dia > 31){
+			
 				  this.dia = 1;
 			  }else{
+			
 				  this.dia = dia;
 			  }
-			 break;
+			
+			  break;
 			 
 			 case 11:
-			  if(dia < 1 || dia > 30){
+			
+				 if(dia < 1 || dia > 30){
+			
 				  this.dia = 1;
 			  }else{
+			
 				  this.dia = dia;
 			  }
-			 break;
+		
+			  break;
 			 
 			 case 12:
-			  if(dia < 1 || dia > 31){
+			
+				 if(dia < 1 || dia > 31){
+			
 				  this.dia = 1;
+			
 			  }else{
+			
 				  this.dia = dia;
 			  }
-			 break;
+		
+			  break;
+		
 			 default:
-			  this.dia = 1;
-			 break;
-		 }
+		
+				 this.dia = 1;
+		
+			  break;
+		
+		}
 		
 	   }
 	   
@@ -329,8 +491,11 @@
 	   public void setMes(int mes){
 		 
 		 if(mes < 1 || mes > 12){
+		
 			 this.mes = 1;
+		
 		 }else{
+		
 			 this.mes = mes;
 		 }
 		   
@@ -345,155 +510,230 @@
 	   public void setAnho(int anho){
 		  
 		   if(anho < 1){
-			 this.anho = 2000;
-		 }else{
+		
+			   this.anho = 2000;
+		
+		   }else{
+		
 			 this.anho = anho;
+	
 		 }
 	   
 	   } 
 		 
 	   public String toString() {
-		String s= +getDia()+"/"+ getMes()+"/"+ getAnho();
+		
+		   String s= +getDia()+"/"+ getMes()+"/"+ getAnho();
+	
 		return s; 
 	}
 		 
 	   public void sumarDia(){
 		   
 		   boolean bisiesto;
-		 if(anho < 1){
+		
+		   if(anho < 1){
+		
 			 this.anho = 2000;
+		 
 		 }else{
+		
 			 this.anho = anho;
+		
 		 }
 		
 		 if((anho%400 == 0)||(anho%4 == 0 && anho%100 != 0)){
-			bisiesto = true;
+		
+			 bisiesto = true;
+		
 		 }else{
-			bisiesto = false;  
+		
+			 bisiesto = false;  
+		
 		 }
 		 
 		 if(mes < 1 || mes > 12){
+		
 			 this.mes = 1;
+		
 		 }else{
+		
 			 this.mes = mes;
+	
 		 }
 		 
 		 switch(mes){
-			 case 1: 
-			 this.dia++;
+		
+		 	 case 1: 
+			
+				 this.dia++;
 			 
 			 if(this.dia > 31){
+		
 				 this.dia = 1;
+		
 				 this.mes = 2;
 			 }
+		
 			 break;
 			 
 			 case 2:
-			 this.dia++;
+		
+				 this.dia++;
 			 
 			 if(bisiesto){
+		
 				 if(this.dia > 29){
+			
 					 this.dia = 1;
+		
 					 this.mes = 3;
 				 }
+		
 			 }else{
+		
 				 if(this.dia > 28){
+		
 					 this.dia = 1;
+		
 					 this.mes = 3;
 					 
 				 }
 			 }
+		
 			 break;
 			 
 			 case 3:
-			 this.dia++;
+		
+				 this.dia++;
 			 
 			 if(this.dia > 31){
+		
 				 this.dia = 1;
+		
 				 this.mes = 4;
 			 }
+		
 			 break;
 			 
 			 case 4:
-			 this.dia++;
+			
+				 this.dia++;
 			 
 			 if(this.dia > 30){
+			
 				 this.dia = 1;
+			
 				 this.mes = 5;
 			 }
+		
 			 break;	 
 			 
 			 case 5:
-			 this.dia++;
+			
+				 this.dia++;
 			 
 			 if(this.dia > 31){
+		
 				 this.dia = 1;
+			
 				 this.mes = 6;
 			 }
+		
 			 break;
 			 
 			 case 6:
-			 this.dia++;
+			
+				 this.dia++;
 			 
 			 if(this.dia > 30){
+		
 				 this.dia = 1;
+		
 				 this.mes = 7;
 			 }
+		
 			 break;
 			 
 			 case 7:
-			 this.dia++;
+			
+				 this.dia++;
 			 
 			 if(this.dia > 31){
+		
 				 this.dia = 1;
+			
 				 this.mes = 8;
 			 }
+			
 			 break;
 			 
+			
 			 case 8:
-			 this.dia++;
+			
+				 this.dia++;
 			 
 			 if(this.dia > 31){
+			
 				 this.dia = 1;
+			
 				 this.mes = 9;
 			 }
+		
 			 break;
 			 
 			 case 9:
-			 this.dia++;
+		
+				 this.dia++;
 			 
 			 if(this.dia > 30){
+		
 				 this.dia = 1;
+		
 				 this.mes = 60;
 			 }
+			
 			 break;
 			 
 			 case 10:
-			 this.dia++;
+		
+				 this.dia++;
 			 
 			 if(this.dia > 31){
+		
 				 this.dia = 1;
+		
 				 this.mes = 11;
 			 }
+		
 			 break;
 			 
 			 case 11:
-			 this.dia++;
+		
+				 this.dia++;
 			 
 			 if(this.dia > 30){
+		
 				 this.dia = 1;
+		
 				 this.mes = 12;
 			 }
+			
 			 break;
 			 
 			 case 12:
-			 this.dia++;
+		
+				 this.dia++;
 			 
 			 if(this.dia > 31){
+			
 				 this.dia = 1;
+			
 				 this.mes = 1;
+			
 				 this.anho++;
 			 }
+			
 			 break;
 			 
 		  }
@@ -501,38 +741,60 @@
 		   
 		   
 		   public int compareTo(Fecha fecha){
+			 
 			   int resultado;
 			   
 			   if(this.anho < fecha.getAnho()){
+			
 				   resultado = -1;
+			
 			   }else{
-				 if(this.anho > fecha.getAnho()){
-				   resultado = 1;
+			
+				   if(this.anho > fecha.getAnho()){
+			
+					 resultado = 1;
+			
 				 }else{
-				   resultado = 0;
+			
+					 resultado = 0;
 				 }
 			   }
 				
 			  if(resultado == 0){
+				
 				  if(this.mes < fecha.getMes()){
-					 resultado = -1;
+				
+					  resultado = -1;
+				
 				  }else{
-					if(this.mes > fecha.getMes()){
-					 resultado = 1;
+				
+					  if(this.mes > fecha.getMes()){
+				
+						resultado = 1;
+			
 					}else{
-					 resultado = 0;
+			
+						resultado = 0;
 					}
 				  }
 			  }	
 			  
 			  if(resultado == 0){
+				
 				  if(this.dia < fecha.getDia()){
-					 resultado = -1;
+				
+					  resultado = -1;
+				
 				  }else{
-					if(this.dia > fecha.getDia()){
-					 resultado = 1;
+				
+					  if(this.dia > fecha.getDia()){
+				
+						resultado = 1;
+				
 					}else{
-					 resultado = 0;
+				
+						resultado = 0;
+				
 					}
 				  }
 			  }
@@ -546,9 +808,13 @@
 			  for(int i = anho; anho < 1000; anho++){
 				
 				if((anho%400 == 0)||(anho%4 == 0 && anho%100 != 0)){
+				
 					bisiesto++;
-			    }
-		      }	 	
+			   
+				}
+		     
+			  }	 	
+			 
 			  return bisiesto;
 	      }
 		  
@@ -556,20 +822,31 @@
 		  	public int calcularDiasBase(Fecha fecha){
 				
 		  		  this.anho = 1000;
+		  		 
 		  		  this.mes = 1;
+		  		 
 		  		  this.dia = 1;
+		  		 
 		  		  boolean anhoBisiesto;
-				  int bisiesto = 0;
-				  int normal = 0;
-				  int meses = 0;
-				  int dias = 0;
-				  int diasTranscurridos = 0;
+				 
+		  		  int bisiesto = 0;
+				 
+		  		  int normal = 0;
+				 
+		  		  int meses = 0;
+				 
+		  		  int dias = 0;
+				 
+		  		  int diasTranscurridos = 0;
 				  
 				  for(int i = this.anho; anho < fecha.getAnho(); this.anho++){
 					
 					if((anho%400 == 0)||(anho%4 == 0 && anho%100 != 0)){
+					
 						bisiesto++;
+					
 					} 
+				 
 				  }
 				  
 				  normal = anho - 1000;
@@ -773,13 +1050,6 @@
 		  		diasTotales = dias1 - dias2;
 		  		
 		  		return diasTotales;
-		  		
-		  		
-		  		
+		  		  		
 		  	}
 }
-		  
-
-	 
-	 
-
